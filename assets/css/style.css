@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: palevioletred;
+    --secondary-color: rgb(81, 160, 196);
+    --tertiary-color: rgb(142, 43, 133);
+}
+
 body {
     /* comment */
-    color:palevioletred;
+    color:var(--primary-color);
     font-family: Helvetica, Arial, Sans-serif;
 }
 
@@ -36,7 +42,7 @@ header h1 {
 header a {
     text-decoration: none;
     /* color: var(--primary-color); */
-    color: palevioletred;
+    color: var(--primary-color);
 }
 
 header nav {
@@ -59,7 +65,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
     background: rgb(217, 228, 240);
-    color: rgb(81, 160, 196);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
 }
@@ -72,10 +78,11 @@ header p {
     padding: 0;
     position: center;
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
     text-align: justify;
+    color: var(--tertiary-color);
 }
 
 footer {
@@ -97,14 +104,16 @@ footer {
 }
 
 .aboutme h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     font-style: italic;
+    color: var(--secondary-color);
 }
 
 .aboutme p {
-    margin-top: 20px;
+    margin-top: 40px;
     font-style: italic;
+    padding-bottom: 20px;
 }
 
 .portfolio {
@@ -117,6 +126,8 @@ footer {
     font-weight: bold;
     font-style: italic;
     margin-left: 25px;
+    color: var(--secondary-color);
+    padding-top: 15px;
 }
 
 .projects {
@@ -200,13 +211,13 @@ footer {
 }
 
 .projects h3 a {
-    color: palevioletred;
+    color: var(--primary-color);
     text-decoration: none;
     border-width: 100%;
 }
 
 .projects h3 a:hover {
-    color: rgb(142, 43, 133);
+    color: var(--tertiary-color);
     background-color: rgb(243, 217, 236);
     border-radius: 100px;
     text-shadow: none;
@@ -220,6 +231,7 @@ footer {
     font-size: 30px;
     font-weight: bold;
     font-style: italic;
+    color: var(--secondary-color);
 }
 
 .connect nav {
@@ -241,8 +253,13 @@ footer {
 }
 
 .connect a {
-    color: palevioletred;
+    color: var(--primary-color);
     font-style: normal;
+    text-decoration: underline;
+}
+
+#phone-number {
+    text-decoration: underline;
 }
 
 .my-resume h3 {
@@ -250,20 +267,139 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
 }
 
 .my-resume a {
-    color: palevioletred;
+    color: var(--secondary-color);
     font-style: italic;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .my-resume a:hover{
     font-style: italic;
     font-weight: bold;
     text-decoration: underline;
+}
+
+
+@media screen and (max-width:980px) {
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+    }
+
+    footer {
+        text-align: center;
+        width: 100%;
+    }
+
+    .aboutme {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .portfolio h2  {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .project1 img, .project2 img, .project3 img, .project4 img{
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .project1 h3, .project2 h3, .project3 h3, .project4 h3, .project5 h3 {
+        text-align: center;
+    }
+
+    .project1 p, .project2 p, .project3 p, .project4 p, .project5 p {
+        text-align: center;
+    }
+
+    .contact-info h2  {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .contact-info h2 nav ul li {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .my-resume h3 {
+        padding-bottom: 10px;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 20px;
+    }
+
+    header nav ul li a {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .aboutme h2 {
+        font-size: 30px;
+        padding-top: 30px;
+    }
+
+    .aboutme p {
+        font-size: 20px;
+    }
+
+    .portfolio h2 {
+        font-size: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 20px;
+    }
 }
